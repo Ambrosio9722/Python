@@ -1,6 +1,4 @@
 import numpy as np
-
-import numpy as np
 from skimage import util, color
 
 import matplotlib
@@ -106,8 +104,11 @@ fig.tight_layout()
 plt.show()
 
 # Carrega uma imagem do disco. Lembre-se de colocar no ambiente
-#img_gray = plt.imread('boat.tif')
-img_gray = plt.imread('carro.jpg')
+img_gray = plt.imread('Estudo/carro.jpg')
+
+print(img_gray.shape, img_gray.dtype, img_gray.min(), img_gray.max())
+
+img_gray_2 = plt.imread('Estudo/carro.jpg')
 
 print(img_gray.shape, img_gray.dtype, img_gray.min(), img_gray.max())
 
@@ -116,7 +117,11 @@ plt.figure()
 plt.imshow(img_gray, cmap='gray')
 plt.show()
 
-# Calcula o histograma da imagem usando o NumPy
+# Plotando a imagem
+plt.figure()
+plt.imshow(img_gray_2, cmap='gray')
+plt.show()
+
 hist, bins = np.histogram(img_gray, bins=256, range=(0, 256))
 
 fig = plt.figure()
@@ -195,3 +200,80 @@ hist_norm = hist / (img_gray_float2.shape[0] * img_gray_float2.shape[1])
 # Computa o histograma e o histograma normalizado da imagem processada
 hist_neg, bins_neg= np.histogram(img_neg2, bins=256, range=(0, 1))
 hist_neg_norm = hist_neg / (img_neg2.shape[0] * img_neg2.shape[1])
+
+fig, ((ax1, ax3), (ax2, ax4)) = plt.subplots(2,2, figsize=(9,6))
+
+im_0 = ax1.imshow(img_gray_float2, cmap='gray')
+# Barra de cores
+divider = make_axes_locatable(ax1)
+cax = divider.append_axes("right", size="5%", pad=0.05)
+fig.colorbar(im_0, cax=cax)
+
+im_1 = ax2.imshow(img_neg2, cmap='gray')
+# Barra de cores
+divider = make_axes_locatable(ax2)
+cax = divider.append_axes("right", size="5%", pad=0.05)
+fig.colorbar(im_1, cax=cax)
+
+ch_0 = ax3.fill_between(bins[:-1], hist_norm)
+# *** Configurações do plot ***
+ax3.autoscale(enable=True, axis='both', tight=True)
+ax3.set_xticks(np.arange(0, 1, 0.2))
+ax3.set_xticks(np.arange(0, 1, 0.1), minor=True)
+ax3.set_yticks(np.arange(0, hist_norm.max()+0.01, hist_norm.max()/8), minor=False)
+ax3.set_yticks(np.arange(0, hist_norm.max()+0.01, hist_norm.max()/4), minor=True)
+ax3.grid(which='major', alpha=1.0)
+ax3.grid(which='minor', alpha=0.5)
+ax3.set_ylim(0, hist_norm.max())
+ax3.set_xlabel('Intensidades da imagem', fontsize='medium')
+ax3.set_ylabel('Histograma', fontsize='medium')
+
+ch_1 = ax4.fill_between(bins[:-1], hist_neg_norm)
+# *** Configurações do plot ***
+ax4.autoscale(enable=True, axis='both', tight=True)
+ax4.set_xticks(np.arange(0, 1, 0.2))
+ax4.set_xticks(np.arange(0, 1, 0.1), minor=True)
+ax4.set_yticks(np.arange(0, hist_norm.max()+0.01, hist_norm.max()/8), minor=False)
+ax4.set_yticks(np.arange(0, hist_norm.max()+0.01, hist_norm.max()/4), minor=True)
+ax4.grid(which='major', alpha=1.0)
+ax4.grid(which='minor', alpha=0.5)
+ax4.set_ylim(0, hist_norm.max())
+ax4.set_xlabel('Intensidades da imagem', fontsize='medium')
+ax4.set_ylabel('Histograma', fontsize='medium')
+
+plt.tight_layout()
+plt.show()
+
+# Todos os valores possíveis em uma imagem de 8 bits sem sinal. [0, 1, 2, ..., 255]
+r = np.linspace(0, 1, 256)
+
+# Lista com alguns valores para o ganho (c)
+gain_list = [1., 1.45, 2, 5]
+
+fig = plt.figure()
+for gain in gain_list:
+    plt.plot(r, gain * np.log2(1 + r), label=str('%.2f'%(gain))) # [log, log2, log10]
+
+
+# *** Configurações do plot ***
+plt.autoscale(enable=True, axis='both', tight=True)
+ax = fig.gca()
+ax.set_xticks(np.arange(0, 1.1, 0.2))
+ax.set_xticks(np.arange(0, 1.1, 0.1), minor=True)
+ax.set_yticks(np.arange(0, 1.1, 0.2), minor=False)
+ax.set_yticks(np.arange(0, 1.1, 0.1), minor=True)
+ax.set_aspect('equal')
+ax.grid(which='major', alpha=1.0)
+ax.grid(which='minor', alpha=0.5)
+ax.set_ylim(0, 1)
+ax.set_xlabel('Intensidade de entrada, r', fontsize='medium')
+ax.set_ylabel('Intensidade de sáida, s', fontsize='medium')
+plt.legend(loc="best", fontsize='6')
+
+plt.show()
+
+#Carrega uma imagem do disco
+img_gray = plt.imread('Estudo/carro.jpg')
+
+# Imprime informações sobre a imagem
+print(img_gray.shape, img_gray.dtype, img_gray.min(), img_gray.max())

@@ -44,4 +44,7 @@ print(round(1.5))
 print(round(2.51))
 print(int(-0.675*1e2)/1e2)
 
+#------------- PROVA MARCOS 23-09---------------------
+
+
 
