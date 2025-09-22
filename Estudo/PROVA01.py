@@ -71,9 +71,28 @@ while i<10:
 
 for c in range (10):
     print(c)
-
-# break (interromper o laço de repetição a qualquer momento)
-
-
-
+while True:
+    n = input ("Infome um numero: ")
+    if n == "0":
+        break
+    else:
+        print("Numero: ",n)
 # continue: “pula” para a próxima iteração da repetição,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#---------------- funções --------------------------- 55
+
+def NomeDaFuncao():
+    return v1  # se a função retornar alguma coisa
