@@ -81,18 +81,12 @@ while True:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 #---------------- funções --------------------------- 55
 
 def NomeDaFuncao():
     return v1  # se a função retornar alguma coisa
+
+
+#------------------Recursão------------------------
+
+
