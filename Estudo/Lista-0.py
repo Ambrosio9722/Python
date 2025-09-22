@@ -45,3 +45,36 @@ def anoBissexto():
 #===============================Exercício 3:==============================================================
 #Considere a função range(início, fim, passo). Utilize essa função algumas vezes com variações nos
 #parâmetros e faça laços de repetições para imprimir os valores gerados.
+def aleatorio():
+    for c in range(0, 100,2):
+        print(c)
+    for c in range(12, 1000,3):
+        print(c)
+
+#===============================Exercício 4:==============================================================
+#Elabore um código que receba três notas considerando os pesos 0, 3, 0, 3 e 0, 4 para as notas 1, 2 e 3,
+#respectivamente. A nota final é soma ponderada das três notas (NotaF inal = Nota1 ∗ 0, 3 + Nota2 ∗
+#0, 3 + Nota4 ∗ 0, 3). O código deve receber estas notas para 10 alunos. É necessário informar se cada
+#aluno foi aprovado (nota final maior ou igual a 60) ou não. Também deve ser informada a média final
+#de todas as notas finais.
+
+def mediaTurma():
+    media = 0
+
+    for c in range(10):
+        n1 = float(input("Informe numero 1: "))
+        n2 = float(input("Informe numero 2: "))
+        n3 = float(input("Informe numero 3: "))
+
+        resultado = (n1*0.3)+(n2*0.3)+(n3*0.4)
+        media = media + resultado
+        if resultado >= 60:
+            print("aluno Aprovado")
+        else:
+            print("aluno reprovado")
+    print("Media da turma: ", media/10)
+    
+#===============================Exercício 5:==============================================================
+#Projete um código que leia uma quantidade indeterminada de números. A cada número informado, o
+#usuário deve informar se deseja continuar ou parar. Ao final, o código deve retornar o maior e o menor
+#número recebido.
