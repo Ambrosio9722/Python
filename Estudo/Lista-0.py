@@ -73,8 +73,85 @@ def mediaTurma():
         else:
             print("aluno reprovado")
     print("Media da turma: ", media/10)
-    
+
 #===============================Exercício 5:==============================================================
 #Projete um código que leia uma quantidade indeterminada de números. A cada número informado, o
 #usuário deve informar se deseja continuar ou parar. Ao final, o código deve retornar o maior e o menor
 #número recebido.
+
+
+
+
+#===============================Exercício 6:==============================================================
+#Elabore um código que calcule o fatorial de um número recebido. O fatorial de um número n, representado
+#por n!, é calculado da seguinte maneira n! = n × (n − 1) × ... × 2 × 1. Sendo que 1! = 0! = 1.
+def fatorial():
+    numero = int(input("Escreva um numero: "))
+    resultado = numero
+    numero = numero-1
+    while numero !=0:
+        resultado = resultado * numero 
+        numero = numero -1
+        if numero == 1:
+            break
+    print(resultado)
+
+#==============================Exercício 7=============================================================
+#Implemente o algoritmo de Euclides1 para calcular o máximo divisor comum (MDC) de dois números.
+def mmc():
+    a = int(input("Primeiro número: "))
+    b = int(input("Segundo número: "))
+
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+
+    print("MDC =", a)
+#==============================Exercício 8=============================================================
+#Crie um código que calcule o mínimo múltiplo comum (MMC) entre dois números. O MMC de dois
+#números n1 e n2 pode ser calculado como MMC =
+#n1∗n2 MDC , onde MDC é o máximo divisor comum entre n1 e n2.
+
+
+#==============================Exercício 9=============================================================
+
+#Elabore um código capaz de simular uma calculadora simples. O código deve solicitar ao usuário a
+#operação desejada (soma, multiplicação, divisão, subtração ou potência) ou então sair. Quando o usuário
+#escolhe uma operação, o programa deve solicitar dois números, realizar a operação sobre estes números
+#e exibir o resultado. O código deve sempre solicitar uma nova operação até que o usuário escolha sair.
+
+while True:
+    print("====menu=== ")
+    print("1 soma ")
+    print("2 multiplicação")
+    print("3 divisão")
+    print("4 subtração")
+    print("5 potencia")
+    print("6 sair")
+    escolha = int(input("Escolha: "))
+    
+    if escolha == 1:
+         print("==Calculo== ")
+         n1 = float(input("valor1: "))
+         n2 = float(input("valor2: "))
+         print (n1+n2)
+    elif escolha == 2:
+          n1 = float(input("valor1: "))
+          n2 = float(input("valor2: "))
+          print(n1*n2)
+    elif escolha == 3:
+          n1 = float(input("valor1: "))
+          n2 = float(input("valor2: "))
+          print(n1/n2)
+    elif escolha == 4:
+          n1 = float(input("valor1: "))
+          n2 = float(input("valor2: "))
+          print(n1-n2)
+    elif escolha == 5:
+          n1 = float(input("valor1: "))
+          n2 = float(input("valor2: "))
+          print(n1**n2)
+    elif escolha == 6:
+          break
