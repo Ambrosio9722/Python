@@ -121,37 +121,61 @@ def mmc():
 #operação desejada (soma, multiplicação, divisão, subtração ou potência) ou então sair. Quando o usuário
 #escolhe uma operação, o programa deve solicitar dois números, realizar a operação sobre estes números
 #e exibir o resultado. O código deve sempre solicitar uma nova operação até que o usuário escolha sair.
+def calculadora():
+    while True:
+        print("====menu=== ")
+        print("1 soma ")
+        print("2 multiplicação")
+        print("3 divisão")
+        print("4 subtração")
+        print("5 potencia")
+        print("6 sair")
+        escolha = int(input("Escolha: "))
+        
+        if escolha == 1:
+            print("==Calculo== ")
+            n1 = float(input("valor1: "))
+            n2 = float(input("valor2: "))
+            print (n1+n2)
+        elif escolha == 2:
+            n1 = float(input("valor1: "))
+            n2 = float(input("valor2: "))
+            print(n1*n2)
+        elif escolha == 3:
+            n1 = float(input("valor1: "))
+            n2 = float(input("valor2: "))
+            print(n1/n2)
+        elif escolha == 4:
+            n1 = float(input("valor1: "))
+            n2 = float(input("valor2: "))
+            print(n1-n2)
+        elif escolha == 5:
+            n1 = float(input("valor1: "))
+            n2 = float(input("valor2: "))
+            print(n1**n2)
+        elif escolha == 6:
+            break
+#==============================Exercício 10=============================================================
+#Desenvolva um código que, considerando um conjunto de números naturais A = {1, 2, 3, ..., n}, gere
+#todas as combinações com três elementos contidos em A. Antes de gerar as combinações o programa
+#deve perguntar o número de elementos de A ao usuário.
 
-while True:
-    print("====menu=== ")
-    print("1 soma ")
-    print("2 multiplicação")
-    print("3 divisão")
-    print("4 subtração")
-    print("5 potencia")
-    print("6 sair")
-    escolha = int(input("Escolha: "))
-    
-    if escolha == 1:
-         print("==Calculo== ")
-         n1 = float(input("valor1: "))
-         n2 = float(input("valor2: "))
-         print (n1+n2)
-    elif escolha == 2:
-          n1 = float(input("valor1: "))
-          n2 = float(input("valor2: "))
-          print(n1*n2)
-    elif escolha == 3:
-          n1 = float(input("valor1: "))
-          n2 = float(input("valor2: "))
-          print(n1/n2)
-    elif escolha == 4:
-          n1 = float(input("valor1: "))
-          n2 = float(input("valor2: "))
-          print(n1-n2)
-    elif escolha == 5:
-          n1 = float(input("valor1: "))
-          n2 = float(input("valor2: "))
-          print(n1**n2)
-    elif escolha == 6:
-          break
+
+
+#==============================Exercício 11=============================================================
+#Considerando um conjunto A = {1, 2, 3, ..., n} com n informado pelo usuário, crie um código para obter
+#os subconjuntos de três elementos contidos em A. Lembre-se que um conjunto não possui elementos
+#repetidos.
+
+n = int(input("infomee um valor")) 
+contador = 0
+
+lista = list(range(0,n))
+print(lista)
+
+for i in range(len(lista)):
+    for j in range(i+1, len(lista)):
+        for k in range(j+1, len(lista)):
+           print(lista[i],lista[j],lista[k])
+           contador = contador + 1
+print(contador)

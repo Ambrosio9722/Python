@@ -79,7 +79,13 @@ while True:
         print("Numero: ",n)
 # continue: “pula” para a próxima iteração da repetição,
 
+#---------------- listas--------------------------- 55
 
+lista_precos = []
+
+lista_precos.insert(0,12)
+lista_precos.insert(1,13)
+print(lista_precos[1])
 
 #---------------- funções --------------------------- 55
 
@@ -90,3 +96,5 @@ def NomeDaFuncao():
 #------------------Recursão------------------------
 
 
+#------------- arredondamento --------------------
+print(round(1.34))
