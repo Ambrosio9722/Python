@@ -1,11 +1,7 @@
-
 import numpy as np
-
 #============= NumPay =====================
 
 # é usada para trabalhar com arrais (Vetores)
-
-
 
 # Criando arrays
 a = np.array([1, 2, 3, 4])
@@ -38,6 +34,12 @@ print('Coluna do meio:', matriz[:,1])
 # b) Vasão do fluxo
 #c) tempo nessesario papa preencher (tempo de enchimento do molde)
 #
-#
+#formulas: p= raiz 2x 
+
+#a) raiz 2*981*17,5 = 185,3cm/seg
+
+#b) q = 185,3*4cm^2 = 741,2 cm^3/seg
+
+#c) 1000/41,2  = 1,35s
 #
 #
