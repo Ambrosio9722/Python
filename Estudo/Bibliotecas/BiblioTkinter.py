@@ -22,3 +22,9 @@ toaster.show_toast(
         "Esta é uma notificação de desktop!",
         duration=10 # Duração em segundos
     )
+
+
+# criar txt
+with open("Estudo/Bibliotecas/meu_arquivo.txt", "w") as arquivo:
+    arquivo.write("Este é o conteúdo do meu arquivo.\n")
+    arquivo.write("Mais uma linha de texto.")
