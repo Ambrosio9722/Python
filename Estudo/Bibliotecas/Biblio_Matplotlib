@@ -1,0 +1,25 @@
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+
+#=========================== PLATAR GRAFICOS ==========================
+x = np.array([3,4,5,6])
+y = np.array([6,7,8,9])
+
+
+# Para um gráfico de linha
+plt.plot(x, y)
+
+    # Para um gráfico de barras
+plt.bar(x, y)
+
+# Adicionar um título para o gráfico
+plt.title("Exemplo de Gráfico de Linha")
+
+# Adicionar rótulos aos eixos
+plt.xlabel("Eixo X")
+plt.ylabel("Eixo Y")
+
+
+plt.show()

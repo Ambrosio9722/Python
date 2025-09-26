@@ -1,5 +1,6 @@
 import numpy as np
 #============= NumPay =====================
+import matplotlib.pyplot as plt
 
 # é usada para trabalhar com arrais (Vetores)
 
@@ -25,6 +26,11 @@ print('Matriz:\n', matriz)
 print('Primeira linha:', matriz[0])
 print('Coluna do meio:', matriz[:,1])
 
+
+
+
+
+
 # a) v= raiz 2x981*20 = 198,1 cm/s
 # b) 198,1*2,5
 # C) ten = 1560cm^2/ 495,25cm    = 3,14s
@@ -42,4 +48,4 @@ print('Coluna do meio:', matriz[:,1])
 
 #c) 1000/41,2  = 1,35s
 #
-#
+#dr dh+ 2Y
